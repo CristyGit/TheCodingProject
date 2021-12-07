@@ -38,23 +38,24 @@ class TwoSum {
     // Brute Force O(n^2)
     for (int i = 0; i < arr.length; i ++) {
         for (int j = i+1; j < arr.length; j++) {
-            if (arr[j] == target - arr[i]) {
-                result[0] = i;
-                result[1] = j;
-                return result;
-            }
+          // Formula
+          if (arr[j] == target - arr[i]) {
+              result[0] = i;
+              result[1] = j;
+              return result;
+          }
         }
     }
 
     return result; 
   }
 
-/// Review:
-// Check for mistakes
-// Walkthough code
+/// Review - Solution 1:
+// *Check for mistakes
+// *Walkthough code
 
-/// Evaluate:
-// input scales up
+/// Evaluate - Solution 1:
+// *Check if input scales up
 // Time Complexity = O(n^2) 
 // Space Complexity = O(1)
 
@@ -84,11 +85,11 @@ class TwoSum {
   }
 }
 
-/// Review:
-// Check for mistakes
-// Walkthough code
+/// Review - Solution 2:
+// *Check for mistakes
+// *Walkthough code
 
-/// Evaluate:
-// input scales up
+/// Evaluate - Solution 2:
+// *Check if input scales up
 // Time Complexity = O(n) 
 // Space Complexity = O(n) 
