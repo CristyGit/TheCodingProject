@@ -1,7 +1,7 @@
 class Main {
   public static void main(String[] args) {
     printTwoSumProb1();
-    printGreatestArea();
+    printGreatestAreaProb2();
   }
 
   public static void printTwoSumProb1() {
@@ -16,7 +16,7 @@ class Main {
     int target =11;
     TwoSum pro1 = new TwoSum();
 
-    System.out.println("////////Two Sum////////");
+    System.out.println("\n\n////////Two Sum////////");
     System.out.println("Brute Force - Solution 1");
     int[] result = pro1.TwoSumSol1(arr, target);
     for (int i = 0; i < result.length; i++) {
@@ -29,20 +29,23 @@ class Main {
     }
   }
 
-  public static void printGreatestArea() {
+  public static void printGreatestAreaProb2() {
     // Test Cases = 
     /// [7,1,2,3,9] --> returns 7*4 = 28
     /// [] --> returns 0
     /// [7] --> returns 0
     /// [6,9,3,4,5,8] --> returns 8*4 = 32
 
-    int[] arr = {7,1,2,3,9};
+    int[] arr = {7};
     MostWaterCont prob2 = new MostWaterCont();
 
-    System.out.println("////////Greatest Area////////");
+    System.out.println("\n\n////////Greatest Area////////");
     System.out.println("Brute Force - Solution 1");
     int result = prob2.findAreaInLargestContainerSol1(arr);
-    System.out.println(result);
-    
+    System.out.print(result);
+
+    System.out.println("\nOptimized - Solution 2");
+    int result2 = prob2.findAreaInLargestContainerSol2(arr);
+    System.out.print(result2);
   }
 }

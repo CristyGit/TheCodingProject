@@ -27,7 +27,7 @@
 /// Plan:
 // Solution 1 = Two for loops with two pointers (i and j) --> O(n^2)
 // Formula: Area=l*w ~> min(pointerA,pointerB) * (indexPointerB - indexPointerA)
-// Solution 2 = 
+// Solution 2 = Two switching pointers (i and j) --> O(n)
 
 class MostWaterCont {
   /// Implement:
@@ -61,11 +61,43 @@ class MostWaterCont {
   /// Evaluate - Solution 1:
   // *Check if Input scales up
   // Time Complexity = O(n^2) 
-  // Space Complexity = O(n) 
+  // Space Complexity = O(1) 
 
+  /// Implement:
+  // Solution 2:
   public int findAreaInLargestContainerSol2(int[] arr) {
+    int maxArea = 0;
     int area = 0;
+    int height = 0;
+    int width = 0;
+    int i = 0;
+    int j = arr.length - 1;
 
-    return area;
+    while (i < j) {
+      // Calculate area
+      height = Math.min(arr[i],arr[j]);
+      width = j-i;
+      area = height * width;
+      // Check if area is greater that past mast area
+      if (maxArea < area)
+        maxArea = area;
+        
+      // Move pointer based on min value
+      if (arr[i] < arr[j]) 
+        i++;
+      else
+        j--;
+    }
+
+    return maxArea;
   }
+
+  /// Review - Solution 2:
+  // *Check for mistakes
+  // *Walkthough code
+
+  /// Evaluate - Solution 2:
+  // *Check if Input scales up
+  // Time Complexity = O(n) 
+  // Space Complexity = O(1) 
 }
