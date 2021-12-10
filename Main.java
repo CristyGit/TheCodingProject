@@ -63,7 +63,7 @@ class Main {
     /// [3] returns 0
     /// [3,4,3] returns 0
 
-    int[] arr = {0,1,0,2,1,0,3,1,0,1,2};
+    int[] arr = {3,4,3};
     WaterTrapped prob3 = new WaterTrapped();
 
     System.out.println("\n\n////////Water Trapped - Problem 3////////");
