@@ -87,12 +87,12 @@ class Main {
     // [AB#] and [a] returns false
     // [##cf] and [cf] returns true
 
-    String str1 = "##cf";
-    String str2 = "cf";
+    String str1 = "AB#";
+    String str2 = "a";
     TypedOutString prob4 = new TypedOutString();
 
     System.out.println("\n\n////////Typed Out String - Problem 4////////");
-    System.out.println("Brute Force - Solution 1");
+    System.out.println("Stack - Solution 1");
     boolean result = prob4.typingStringsSol1(str1, str2);
     System.out.print(result);
 

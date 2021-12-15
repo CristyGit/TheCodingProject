@@ -19,7 +19,7 @@ import java.util.*;
 // [AB#] and [a] returns false
 
 /// Plan:
-// Solution 1 = Go throught string one at a time and when you see the # delete the last character. Then compare last strings. Use a array or stack.
+// Solution 1 = Stack/Array solution. Go throught string one char at a time and add them to a stack except for #. if you see a #, pop (remove last char) the stack if it is not empty.
 // Solution 2 =
 
 
@@ -27,27 +27,33 @@ import java.util.*;
 // Solution 1:
 class TypedOutString {
   public boolean typingStringsSol1(String str1, String str2) {
-    Stack stack1 = new Stack();
-    Stack stack2 = new Stack();
-    
-    for (int i = 0; i < str1.length(); i++) {
-        if (str1.charAt(i) != '#')
-          stack1.push(str1.charAt(i));
-        else if (str1.charAt(i) == '#' && !stack1.isEmpty())
-          stack1.pop();
+    String strFinal1 = typeStrings(str1);
+    String strFinal2 = typeStrings(str2);
+
+    System.out.println(strFinal1);
+    System.out.println(strFinal2);
+  
+    if (strFinal1.length() != strFinal2.length())
+      return false;
+    else if (strFinal1.equals(strFinal2)) {
+      return true;
     }
 
-    for (int i = 0; i < str2.length(); i++) {
-        if (str2.charAt(i) != '#')
-          stack2.push(str2.charAt(i));
-        else if (str2.charAt(i) == '#' && !stack2.isEmpty())
-          stack2.pop();
+    return false;
+  }
+
+  // Helper function
+  public String typeStrings(String str) {
+    Stack stack = new Stack();
+
+    for (int i = 0; i < str.length(); i++) {
+        if (str.charAt(i) != '#')
+          stack.push(str.charAt(i));
+        else if (str.charAt(i) == '#' && !stack.isEmpty())
+          stack.pop();
     }
 
-    System.out.println(stack1);
-    System.out.println(stack2);
-
-    return stack1.equals(stack2); 
+    return stack.toString();
   }
 
 /// Review - Solution 1:
@@ -56,8 +62,8 @@ class TypedOutString {
 
 /// Evaluate - Solution 1:
 // *Check if input scales up
-// Time Complexity = O(n^2) 
-// Space Complexity = O(1)
+// Time Complexity = O(n) 
+// Space Complexity = O(n)
 
 /// Implement: 
 // Solution 2:
