@@ -26,7 +26,6 @@ import java.util.HashMap;
 /// Plan:
 // Solution 1 = Two pointers (i and j) pairing two elements --> O(n^2)
 // Formulas: target == arr[i] + arr[j], arr[j] == target - arr[i]
-
 // Solution 2 = Hashmap with formula --> O (n) to find number
 
 /// Implement:

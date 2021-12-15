@@ -6,9 +6,11 @@ class Main {
     /// Medium
     //printGreatestAreaProb2();
     /// Hard
-    waterTrappedProb3();
+    //waterTrappedProb3();
 
     // Strings Problems
+    typedOutStringProb4();
+    
   }
 
   public static void printTwoSumProb1() {
@@ -63,7 +65,7 @@ class Main {
     /// [3] returns 0
     /// [3,4,3] returns 0
 
-    int[] arr = {3,4,3};
+    int[] arr = {0,1,0,2,1,0,3,1,0,1,2};
     WaterTrapped prob3 = new WaterTrapped();
 
     System.out.println("\n\n////////Water Trapped - Problem 3////////");
@@ -74,5 +76,28 @@ class Main {
     System.out.println("\nOptimized - Solution 2");
     int result2 = prob3.waterTrappedSol2(arr);
     System.out.print(result2);
+  }
+
+  public static void typedOutStringProb4() {
+    /// Test Cases = 
+    // [ab#z] and [az#z] returns true
+    // [] and [] returns true
+    // [c#cf] and [cf] returns true
+    // [ab##] and [ac#] returns false
+    // [AB#] and [a] returns false
+    // [##cf] and [cf] returns true
+
+    String str1 = "##cf";
+    String str2 = "cf";
+    TypedOutString prob4 = new TypedOutString();
+
+    System.out.println("\n\n////////Typed Out String - Problem 4////////");
+    System.out.println("Brute Force - Solution 1");
+    boolean result = prob4.typingStringsSol1(str1, str2);
+    System.out.print(result);
+
+    System.out.println("\nOptimized - Solution 2");
+    // int result2 = prob3.waterTrappedSol2(arr);
+    // System.out.print(result2);
   }
 }
