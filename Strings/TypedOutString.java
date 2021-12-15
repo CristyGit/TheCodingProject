@@ -20,7 +20,7 @@ import java.util.*;
 
 /// Plan:
 // Solution 1 = Stack/Array solution. Go throught string one char at a time and add them to a stack except for #. if you see a #, pop (remove last char) the stack if it is not empty.
-// Solution 2 =
+// Solution 2 = Improve space complexity by using two pointers.
 
 
 /// Implement:
@@ -62,11 +62,47 @@ class TypedOutString {
 
 /// Evaluate - Solution 1:
 // *Check if input scales up
-// Time Complexity = O(n) 
-// Space Complexity = O(n)
+// Time Complexity = O(a + b) a and b are the srings lengths
+// Space Complexity = O(a + b)
 
 /// Implement: 
 // Solution 2:
+  public boolean typingStringsSol2(String str1, String str2) {
+    int p1 = str1.length()-1;
+    int p2 = str2.length()-1;
 
+    while(str1.contains("#") || str2.contains("#"))
+    {
+      if (str1.charAt(p1) == '#' && !str1.isEmpty()) {
+        str1 = str1.replace(str1.charAt(p1-1)+"#", "");
+        System.out.println(str1 + " here");
+      }
 
+      if (str2.charAt(p2) == '#' && !str2.isEmpty()) {
+        str2 = str2.replace(str2.charAt(p2-1)+"#", "");
+        System.out.println(str2 + " now");
+      }
+
+      System.out.println(str1 + " " + str2);
+
+      if (str1.contains("#"))
+        p1--;
+      if (str2.contains("#"))
+        p2--;
+    }
+
+    System.out.println(str1);
+    System.out.println(str2);
+
+    return str1.equals(str2);
+  }
+
+  /// Review - Solution 2:
+  // *Check for mistakes
+  // *Walkthough code
+
+  /// Evaluate - Solution 2:
+  // *Check if Input scales up
+  // Time Complexity = O(a + b) 
+  // Space Complexity = O(n) 
 }
