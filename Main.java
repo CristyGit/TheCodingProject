@@ -96,7 +96,7 @@ class Main {
     boolean result = prob4.typingStringsSol1(str1, str2);
     System.out.print(result);
 
-    System.out.println("\nOptimized - Solution 2");
+    System.out.println("\nOriginal - Solution 2 (Needs Work)");
     boolean result2 = prob4.typingStringsSol2(str1, str2);
     System.out.print(result2);
 

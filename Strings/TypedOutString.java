@@ -91,7 +91,6 @@ class TypedOutString {
 
     // System.out.println(str1);
     // System.out.println(str2);
-    System.out.println("FIX!!!");
 
     return str1.equals(str2);
   }
