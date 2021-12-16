@@ -87,8 +87,8 @@ class Main {
     // [AB#] and [a] returns false
     // [##cf] and [cf] returns true
 
-    String str1 = "AB#";
-    String str2 = "a";
+    String str1 = "abc#d";
+    String str2 = "abzz##d";
     TypedOutString prob4 = new TypedOutString();
 
     System.out.println("\n\n////////Typed Out String - Problem 4////////");
@@ -99,5 +99,9 @@ class Main {
     System.out.println("\nOptimized - Solution 2");
     boolean result2 = prob4.typingStringsSol2(str1, str2);
     System.out.print(result2);
+
+    System.out.println("\nOptimized - Solution 3");
+    boolean result3 = prob4.typingStringsSol3(str1, str2);
+    System.out.print(result3);
   }
 }
