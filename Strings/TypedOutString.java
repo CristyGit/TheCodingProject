@@ -62,7 +62,7 @@ class TypedOutString {
 
 /// Evaluate - Solution 1:
 // *Check if input scales up
-// Time Complexity = O(a + b) a and b are the srings lengths
+// Time Complexity = O(a + b) a and b are the strings lengths
 // Space Complexity = O(a + b)
 
 /// Implement: FIX!!! doesn't account for multiple ###

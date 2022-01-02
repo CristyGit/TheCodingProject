@@ -9,7 +9,9 @@ class Main {
     //waterTrappedProb3();
 
     // Strings Problems
-    typedOutStringProb4();
+    //typedOutStringProb4();
+    longestSubstringProb5();
+
     
   }
 
@@ -103,5 +105,25 @@ class Main {
     System.out.println("\nOptimized - Solution 3");
     boolean result3 = prob4.typingStringsSol3(str1, str2);
     System.out.print(result3);
+  }
+
+  public static void longestSubstringProb5() {
+    /// Test cases =
+    // "abccabb" returns 3 [abc and cab]
+    // "cccccc" returns 1 [c]
+    // "" returns 0
+    // "abcbda" returns 4 [cbda]
+
+    String str1 = "abcbda";
+    LongestSubstring prob5 = new LongestSubstring();
+
+    System.out.println("\n\n////////Longest Substring - Problem 5////////");
+    System.out.println("Original - Solution 1");
+    int num1 = prob5.longestSubstringSol1(str1);
+    System.out.print(num1);
+
+    System.out.println("\nOptimized - Solution 2");
+    int num2 = prob5.longestSubstringSol2(str1);
+    System.out.print(num2);
   }
 }
