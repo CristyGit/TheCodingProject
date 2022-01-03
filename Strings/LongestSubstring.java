@@ -17,8 +17,8 @@ import java.util.*;
 // "abcbda" returns 4 [cbda]
 
 /// Plan:
-// Solution 1 = 
-// Solution 2 =
+// Solution 1 = two pointers. first loop clears array, then second lop checks if element is not in the array. if it is not then add it and replace longest if necessary.
+// Solution 2 = sliding window. 
 
 
 /// Implement:
@@ -48,7 +48,6 @@ class LongestSubstring {
         else {
           break;
         }
-        //System.out.println(arr);
       } 
     }
 
@@ -71,9 +70,20 @@ class LongestSubstring {
     // "" returns 0
     // "abcbda" returns 4 [cbda]
     int longest = 0;
+    int left = 0;
+    int[] arr = new int[str.length()];
     
+    for (int right = 0; right < str.length(); right++) {
+      char currentChar = str.charAt(right);
+      int prevChar = arr[currentChar];
 
-    
+      if (prevChar >= left)
+      {
+        left = prevChar;
+      }
+      arr[currentChar] = right;
+      longest = Math.max(longest, right-left+1);
+    }
     return longest;
   }
 
