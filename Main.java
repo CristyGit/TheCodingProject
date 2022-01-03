@@ -114,7 +114,7 @@ class Main {
     // "" returns 0
     // "abcbda" returns 4 [cbda]
 
-    String str1 = "abcbda";
+    String str1 = "abccabb";
     LongestSubstring prob5 = new LongestSubstring();
 
     System.out.println("\n\n////////Longest Substring - Problem 5////////");

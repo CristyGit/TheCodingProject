@@ -1,4 +1,4 @@
-import java.util.*;  
+import java.util.*;
 // Given a string, find the length of the longest 
 // substring without repeating characters. Example:
 // Input = abccabb, Output = 3
@@ -19,7 +19,6 @@ import java.util.*;
 /// Plan:
 // Solution 1 = two pointers. first loop clears array, then second lop checks if element is not in the array. if it is not then add it and replace longest if necessary.
 // Solution 2 = sliding window. 
-
 
 /// Implement:
 // Solution 1:
@@ -44,24 +43,23 @@ class LongestSubstring {
         if (!arr.contains(str.charAt(j))) {
           arr.add(str.charAt(j));
           longest = Math.max(arr.size(), longest);
-        } 
-        else {
+        } else {
           break;
         }
-      } 
+      }
     }
 
     return longest;
   }
 
-/// Review - Solution 1:
-// *Check for mistakes
-// *Walkthough code
+  /// Review - Solution 1:
+  // *Check for mistakes
+  // *Walkthough code
 
-/// Evaluate - Solution 1:
-// *Check if input scales up
-// Time Complexity = O(n^2)
-// Space Complexity = O(n)
+  /// Evaluate - Solution 1:
+  // *Check if input scales up
+  // Time Complexity = O(n^2)
+  // Space Complexity = O(n)
 
   public static int longestSubstringSol2(String str) {
     /// Test Cases =
@@ -71,28 +69,31 @@ class LongestSubstring {
     // "abcbda" returns 4 [cbda]
     int longest = 0;
     int left = 0;
-    int[] arr = new int[str.length()];
-    
+    HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+
+    if (str.length() <= 1)
+      return str.length();
+
     for (int right = 0; right < str.length(); right++) {
       char currentChar = str.charAt(right);
-      int prevChar = arr[currentChar];
-
-      if (prevChar >= left)
-      {
-        left = prevChar;
+      if (map.containsKey(currentChar)) {
+        int prevChar = map.get(currentChar);
+        if (prevChar >= left) {
+          left = prevChar + 1;
+        }
       }
-      arr[currentChar] = right;
-      longest = Math.max(longest, right-left+1);
+      map.put(currentChar, right);
+      longest = Math.max(longest, right - left + 1);
     }
     return longest;
   }
 
-/// Review - Solution 2:
-// *Check for mistakes
-// *Walkthough code
+  /// Review - Solution 2:
+  // *Check for mistakes
+  // *Walkthough code
 
-/// Evaluate - Solution 2:
-// *Check if input scales up
-// Time Complexity = 
-// Space Complexity = 
+  /// Evaluate - Solution 2:
+  // *Check if input scales up
+  // Time Complexity = O(n)
+  // Space Complexity = O(n)
 }
